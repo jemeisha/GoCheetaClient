@@ -24,19 +24,31 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _LoginResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "loginResponse");
     private final static QName _SayHello_QNAME = new QName("http://gocheeta.jemeisha.com/", "sayHello");
     private final static QName _Return_QNAME = new QName("go_cheeta", "return");
     private final static QName _RegisterResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "registerResponse");
     private final static QName _Customer_QNAME = new QName("http://gocheeta.jemeisha.com/", "Customer");
     private final static QName _NoSuchAlgorithmException_QNAME = new QName("http://gocheeta.jemeisha.com/", "NoSuchAlgorithmException");
     private final static QName _SayHelloResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "sayHelloResponse");
+    private final static QName _IsLoggedIn_QNAME = new QName("http://gocheeta.jemeisha.com/", "isLoggedIn");
     private final static QName _Register_QNAME = new QName("http://gocheeta.jemeisha.com/", "register");
+    private final static QName _IsLoggedInResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "isLoggedInResponse");
+    private final static QName _Login_QNAME = new QName("http://gocheeta.jemeisha.com/", "login");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.jemeisha.proxy
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link LoginResponse }
+     * 
+     */
+    public LoginResponse createLoginResponse() {
+        return new LoginResponse();
     }
 
     /**
@@ -64,6 +76,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link IsLoggedIn }
+     * 
+     */
+    public IsLoggedIn createIsLoggedIn() {
+        return new IsLoggedIn();
+    }
+
+    /**
      * Create an instance of {@link NoSuchAlgorithmException }
      * 
      */
@@ -80,11 +100,36 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Login }
+     * 
+     */
+    public Login createLogin() {
+        return new Login();
+    }
+
+    /**
+     * Create an instance of {@link IsLoggedInResponse }
+     * 
+     */
+    public IsLoggedInResponse createIsLoggedInResponse() {
+        return new IsLoggedInResponse();
+    }
+
+    /**
      * Create an instance of {@link Register }
      * 
      */
     public Register createRegister() {
         return new Register();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link LoginResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "loginResponse")
+    public JAXBElement<LoginResponse> createLoginResponse(LoginResponse value) {
+        return new JAXBElement<LoginResponse>(_LoginResponse_QNAME, LoginResponse.class, null, value);
     }
 
     /**
@@ -142,12 +187,39 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link IsLoggedIn }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "isLoggedIn")
+    public JAXBElement<IsLoggedIn> createIsLoggedIn(IsLoggedIn value) {
+        return new JAXBElement<IsLoggedIn>(_IsLoggedIn_QNAME, IsLoggedIn.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Register }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "register")
     public JAXBElement<Register> createRegister(Register value) {
         return new JAXBElement<Register>(_Register_QNAME, Register.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link IsLoggedInResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "isLoggedInResponse")
+    public JAXBElement<IsLoggedInResponse> createIsLoggedInResponse(IsLoggedInResponse value) {
+        return new JAXBElement<IsLoggedInResponse>(_IsLoggedInResponse_QNAME, IsLoggedInResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Login }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "login")
+    public JAXBElement<Login> createLogin(Login value) {
+        return new JAXBElement<Login>(_Login_QNAME, Login.class, null, value);
     }
 
 }

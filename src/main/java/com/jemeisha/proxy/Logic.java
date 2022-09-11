@@ -27,6 +27,56 @@ public interface Logic {
 
     /**
      * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns java.lang.String
+     * @throws NoSuchAlgorithmException_Exception
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "login", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.Login")
+    @ResponseWrapper(localName = "loginResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.LoginResponse")
+    @Action(input = "http://gocheeta.jemeisha.com/Logic/loginRequest", output = "http://gocheeta.jemeisha.com/Logic/loginResponse", fault = {
+        @FaultAction(className = NoSuchAlgorithmException_Exception.class, value = "http://gocheeta.jemeisha.com/Logic/login/Fault/NoSuchAlgorithmException")
+    })
+    public String login(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1)
+        throws NoSuchAlgorithmException_Exception
+    ;
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "isLoggedIn", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.IsLoggedIn")
+    @ResponseWrapper(localName = "isLoggedInResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.IsLoggedInResponse")
+    @Action(input = "http://gocheeta.jemeisha.com/Logic/isLoggedInRequest", output = "http://gocheeta.jemeisha.com/Logic/isLoggedInResponse")
+    public boolean isLoggedIn(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "sayHello", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.SayHello")
+    @ResponseWrapper(localName = "sayHelloResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.SayHelloResponse")
+    @Action(input = "http://gocheeta.jemeisha.com/Logic/sayHelloRequest", output = "http://gocheeta.jemeisha.com/Logic/sayHelloResponse")
+    public String sayHello();
+
+    /**
+     * 
      * @param arg3
      * @param arg2
      * @param arg4
@@ -56,17 +106,5 @@ public interface Logic {
         String arg4)
         throws NoSuchAlgorithmException_Exception
     ;
-
-    /**
-     * 
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "sayHello", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.SayHello")
-    @ResponseWrapper(localName = "sayHelloResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.SayHelloResponse")
-    @Action(input = "http://gocheeta.jemeisha.com/Logic/sayHelloRequest", output = "http://gocheeta.jemeisha.com/Logic/sayHelloResponse")
-    public String sayHello();
 
 }
