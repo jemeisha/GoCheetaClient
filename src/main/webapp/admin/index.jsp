@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.jemeisha.Util" %><%--
   Created by IntelliJ IDEA.
   User: jEMEISHA
   Date: 9/12/2022
@@ -6,6 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+boolean isLoggedIn= Util.isAdminLoggedIn(request);
+if(!isLoggedIn){
+    response.sendRedirect("/admin/login");
+}
+%>
 <html>
 <head>
     <title>Title</title>
@@ -17,10 +23,10 @@
     <%@ include file="/WEB-INF/partials/adminHeader.jsp"%>
 </div>
 <div class="flex flex-row h-full">
-    <div class="grow shrink-0">
+    <div class="grow-0 shrink overflow-x-hidden">
         <%@ include file="/WEB-INF/partials/adminSidebar.jsp"%>
     </div>
-    <div class="grow-0 shrink">body</div>
+    <div class="grow shrink-0">body</div>
 
 </div>
 

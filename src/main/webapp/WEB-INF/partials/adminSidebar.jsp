@@ -28,9 +28,9 @@
                         Manage Admins
                     </a>
 
-                    <a class="nav-link" href="test.php" >
+                    <a class="nav-link" href="/admin/drivers" >
                         <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                        Manage Request
+                        Manage Drivers
                     </a>
 
                     <a class="nav-link" href="cusdetails.php">

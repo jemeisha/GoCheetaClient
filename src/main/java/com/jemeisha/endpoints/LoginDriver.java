@@ -13,10 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class Login extends HttpServlet {
+public class LoginDriver extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/login.jsp").forward(req,resp);
+        req.getRequestDispatcher("/driver/driverLogin.jsp").forward(req,resp);
     }
 
     @Override
@@ -30,8 +30,8 @@ public class Login extends HttpServlet {
 
         try {
 
-            String token= logic.login(username,password);
-            Cookie cookie = Util.createCustomerCookie(token);
+            String token= logic.loginDriver(username, password);
+            Cookie cookie = Util.createDriverCookie(token);
             resp.addCookie(cookie);
 
             resp.setContentType("text/html");//setting the content type

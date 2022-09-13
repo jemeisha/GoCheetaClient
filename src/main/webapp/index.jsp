@@ -1,5 +1,6 @@
 <%@ page import="com.jemeisha.proxy.LogicService" %>
 <%@ page import="com.jemeisha.proxy.Logic" %>
+<%@ page import="com.jemeisha.Util" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,25 +17,8 @@
 </head>
 <body>
 <%
-    LogicService logicService= new LogicService();
-    Logic logic= logicService.getLogicPort();
+    boolean isLoggedIn= Util.isCustomerLoggedIn(request);
 
-    Cookie[] cookies= request.getCookies(); //get all cookies
-
-    Cookie loginCookie=null;
-    for(int x=0;x<cookies.length;x++){
-        if(cookies[x].getName().equals("login_cookie")){
-            loginCookie=cookies[x];
-            break;
-        }
-    }
-
-    //boolean isLoggedIn= loginCookie!=null;
-    // boolean isLoggedIn= true;
-    boolean isLoggedIn= false;
-    if(loginCookie!=null){
-        isLoggedIn=logic.isLoggedIn(loginCookie.getValue());
-    }
 
 %>
 
