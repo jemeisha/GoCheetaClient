@@ -30,8 +30,10 @@ public class Login extends HttpServlet {
         try {
 
             String token= logic.login(username,password);
-            Cookie cookie = new Cookie("login_cokkie",token);
+            Cookie cookie = new Cookie("login_cookie",token);
             cookie.setMaxAge(2592000);//log-off time(1 month)
+            cookie.setHttpOnly(true);
+            cookie.setPath("/");
             resp.addCookie(cookie);
 
             resp.setContentType("text/html");//setting the content type

@@ -1,3 +1,5 @@
+<%@ page import="com.jemeisha.proxy.LogicService" %>
+<%@ page import="com.jemeisha.proxy.Logic" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,17 +8,35 @@
     <meta name="keywords" content="HTML,CSS,JavaScript">
     <meta name="author" content="Taruunnn">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <%@include file="WEB-INF/partials/commonIncludes.jsp"%>
     <link rel="stylesheet" href="CSS/customStyle.css">
     <link rel="stylesheet" href="CSS/responsive.css">
     <link rel="shortcut icon" href="https://e7.pngegg.com/pngimages/58/174/png-clipart-gold-colored-letter-g-illustration-capital-letter-g-miscellaneous-alphabet-thumbnail.png">
-    <script src="https://kit.fontawesome.com/6e6e5e1f4c.js"></script>
     <title>Go Cheeta </title>
 </head>
 <body>
+<%
+    LogicService logicService= new LogicService();
+    Logic logic= logicService.getLogicPort();
 
+    Cookie[] cookies= request.getCookies(); //get all cookies
+
+    Cookie loginCookie=null;
+    for(int x=0;x<cookies.length;x++){
+        if(cookies[x].getName().equals("login_cookie")){
+            loginCookie=cookies[x];
+            break;
+        }
+    }
+
+    //boolean isLoggedIn= loginCookie!=null;
+    // boolean isLoggedIn= true;
+    boolean isLoggedIn= false;
+    if(loginCookie!=null){
+        isLoggedIn=logic.isLoggedIn(loginCookie.getValue());
+    }
+
+%>
 
 <header>
     <nav class="navbar  fixed-top navbar-expand-lg navbar-light  " style="background: #feeb03">
@@ -34,7 +54,7 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#register-section">Register</a>
+                    <a class="nav-link" href="#register-section"><%= isLoggedIn?"Book":"Register"%></a>
                 </li>
 
                 <li class="nav-item">
@@ -67,7 +87,7 @@
                                 <span class="headedr-span-sec"> Reach your destination with the cheapest prices for your ride. Enjoy your life with us.</span>
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <button type="button" class="custom-btn btn btn-light">BOOK NOW</button>
+                                        <button type="button" class="custom-btn btn btn-light"><%= isLoggedIn?"BOOK NOW":"Register NOW"%></button>
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +109,7 @@
                             <span class="headedr-span-sec"> We will wait until you complete your travel goals. First 15 minutes will be on us. </span>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <button type="button" class="custom-btn btn btn-light"><a href="#book-section" style="color: black">BOOK NOW</a></button>
+                                    <button type="button" class="custom-btn btn btn-light"><a href="#book-section" style="color: black"><%= isLoggedIn?"BOOK NOW":"REGISTER NOW"%></a></button>
                                 </div>
                             </div>
 
@@ -109,7 +129,7 @@
                             <span class="headedr-span-sec"> We will give our new members a free 1Km on their fist ride. </span>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <button type="button" class="custom-btn btn btn-light">BOOK YOUR RIDE</button>
+                                    <button type="button" class="custom-btn btn btn-light"><%= isLoggedIn?"BOOK NOW":"REGISTER NOW"%></button>
                                 </div>
                             </div>
 
@@ -130,7 +150,8 @@
 <main>
     <!-- section book cab-->
     <%
-        if(true){
+
+        if(!isLoggedIn){
     %>
     <section class="bookcab " id="book-section">
 
@@ -274,11 +295,16 @@
                                 <div class="btn-group bootstrap-select input-group-btn form-control dropup">
                                     <div class="btn-group" role="group">
                                         <button id="btnGroupDrop1" type="button" class="btn dropdown-toggle btn-default bs-placeholder btn-default-custom" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Select Vehicle
+                                            Select Pickup
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                            <a class="dropdown-item" href="#">Car</a>
-                                            <a class="dropdown-item" href="#">Van</a>
+                                            <a class="dropdown-item" href="#">Nugegoda</a>
+                                            <a class="dropdown-item" href="#">Gampaha</a>
+                                            <a class="dropdown-item" href="#">Galle</a>
+                                            <a class="dropdown-item" href="#">Kandy</a>
+                                            <a class="dropdown-item" href="#">Kurunegala</a>
+                                            <a class="dropdown-item" href="#">Jaffna</a>
+
                                         </div>
                                     </div>
                                 </div>
@@ -287,11 +313,15 @@
                                 <div class="btn-group bootstrap-select input-group-btn form-control dropup">
                                     <div class="btn-group" role="group">
                                         <button id="btnGroupDrop1" type="button" class="btn dropdown-toggle btn-default bs-placeholder btn-default-custom" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            No of passengers
+                                            Select Destination
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                            <a class="dropdown-item" href="#">less than 3</a>
-                                            <a class="dropdown-item" href="#">less than 8</a>
+                                            <a class="dropdown-item" href="#">Nugegoda</a>
+                                            <a class="dropdown-item" href="#">Gampaha</a>
+                                            <a class="dropdown-item" href="#">Galle</a>
+                                            <a class="dropdown-item" href="#">Kandy</a>
+                                            <a class="dropdown-item" href="#">Kurunegala</a>
+                                            <a class="dropdown-item" href="#">Jaffna</a>
 
                                         </div>
                                     </div>
