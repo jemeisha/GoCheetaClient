@@ -56,10 +56,10 @@
                 for(int x=0;x< drivers.length;x++){
                     Driver d= drivers[x];
             %>
-            <%=d.getDriverId()%>
-<%--            <jsp:include page="/WEB-INF/partials/driverRow.jsp">--%>
-<%--                <jsp:param name="driverId" value="<%=d.getDriverId()%>"/>--%>
-<%--            </jsp:include>--%>
+<%--            <%=d.getDriverId()%>--%>
+            <jsp:include page="/WEB-INF/partials/driverRow.jsp">
+                <jsp:param name="driverId" value="<%=d.getDriverId()%>"/>
+            </jsp:include>
             <%}%>
         </div>
     </div>
