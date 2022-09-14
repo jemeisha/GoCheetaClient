@@ -30,6 +30,16 @@
     <jsp-file>/admin/drivers.jsp</jsp-file>
   </servlet>
 
+  <servlet>
+    <servlet-name>adminCustomers</servlet-name>
+    <jsp-file>/admin/customers.jsp</jsp-file>
+  </servlet>
+
+  <servlet>
+    <servlet-name>adminBookings</servlet-name>
+    <jsp-file>/admin/adminBookings.jsp</jsp-file>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>register</servlet-name>
     <url-pattern>/register</url-pattern>
@@ -53,5 +63,15 @@
   <servlet-mapping>
     <servlet-name>adminDrivers</servlet-name>
     <url-pattern>/admin/drivers</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>adminCustomers</servlet-name>
+    <url-pattern>/admin/customers</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>adminBookings</servlet-name>
+    <url-pattern>/admin/bookings</url-pattern>
   </servlet-mapping>
 </web-app>

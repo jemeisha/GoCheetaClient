@@ -52,13 +52,22 @@
                 LogicService logicService= new LogicService();
                 Logic logic= logicService.getLogicPort();
 
-                Driver drivers[]= logic.getAllDrivers().toArray(new Driver[0]);
+                Driver drivers[]= logic.getAllDriversWithVehicles().toArray(new Driver[0]);
                 for(int x=0;x< drivers.length;x++){
                     Driver d= drivers[x];
             %>
 <%--            <%=d.getDriverId()%>--%>
             <jsp:include page="/WEB-INF/partials/driverRow.jsp">
                 <jsp:param name="driverId" value="<%=d.getDriverId()%>"/>
+                <jsp:param name="driverFName" value="<%=d.getDriverFirstName()%>"/>
+                <jsp:param name="driverLName" value="<%=d.getDriverLastName()%>"/>
+                <jsp:param name="driverNic" value="<%=d.getDriverNic()%>"/>
+                <jsp:param name="driverMobile" value="<%=d.getDriverMobile()%>"/>
+                <jsp:param name="branchId" value="<%=d.getBranchId()%>"/>
+                <jsp:param name="vNo" value="<%=d.getVehicle().getVehicleNo()%>"/>
+                <jsp:param name="vType" value="<%=d.getVehicle().getVehicleType()%>"/>
+                <jsp:param name="noOfSeats" value="<%=d.getVehicle().getNoOfSeats()%>"/>
+                <jsp:param name="vColour" value="<%=d.getVehicle().getVehicleColour()%>"/>
             </jsp:include>
             <%}%>
         </div>

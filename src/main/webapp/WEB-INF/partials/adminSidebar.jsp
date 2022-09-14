@@ -18,14 +18,14 @@
                         Admin
                     </a>
                     <div class="sb-sidenav-menu-heading">Function</div>
-                    <a class="nav-link" href="test2.php" >
+                    <a class="nav-link" href="/admin/bookings" >
                         <div class="sb-nav-link-icon"><i class="fa fa-book"></i></div>
-                        Manage Items
+                        Manage Bookings
                     </a>
 
-                    <a class="nav-link" href="mngadmin.php" >
+                    <a class="nav-link" href="/admin/branches" >
                         <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                        Manage Admins
+                        Branches
                     </a>
 
                     <a class="nav-link" href="/admin/drivers" >
@@ -33,19 +33,11 @@
                         Manage Drivers
                     </a>
 
-                    <a class="nav-link" href="cusdetails.php">
+                    <a class="nav-link" href="/admin/customers">
                         <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                        Customer Details
+                        Manage Customers
                     </a>
 
-                    <a class="nav-link" href="feedback.php">
-                        <div class="sb-nav-link-icon"><i class="fa fa-comments"></i></div>
-                        Customer Feedback
-                    </a>
-                    <a class="nav-link" href="pdf/index.php">
-                        <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                        Genarate Stock Report
-                    </a>
                 </div>
             </div>
             <div class="sb-sidenav-footer">
