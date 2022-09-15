@@ -28,9 +28,13 @@ public class ObjectFactory {
     private final static QName _IsAdminLoggedIn_QNAME = new QName("http://gocheeta.jemeisha.com/", "isAdminLoggedIn");
     private final static QName _LoginAdminResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "loginAdminResponse");
     private final static QName _LoginDriver_QNAME = new QName("http://gocheeta.jemeisha.com/", "loginDriver");
+    private final static QName _Branch_QNAME = new QName("http://gocheeta.jemeisha.com/", "Branch");
+    private final static QName _GetLoggedInUser_QNAME = new QName("http://gocheeta.jemeisha.com/", "getLoggedInUser");
     private final static QName _GetAllDriversWithVehiclesResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "getAllDriversWithVehiclesResponse");
     private final static QName _IsAdminLoggedInResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "isAdminLoggedInResponse");
     private final static QName _IsDriverLoggedInResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "isDriverLoggedInResponse");
+    private final static QName _Category_QNAME = new QName("http://gocheeta.jemeisha.com/", "Category");
+    private final static QName _GetAllBranchesResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "getAllBranchesResponse");
     private final static QName _GetAllDrivers_QNAME = new QName("http://gocheeta.jemeisha.com/", "getAllDrivers");
     private final static QName _GetAllDriversResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "getAllDriversResponse");
     private final static QName _LoginAdmin_QNAME = new QName("http://gocheeta.jemeisha.com/", "loginAdmin");
@@ -41,18 +45,25 @@ public class ObjectFactory {
     private final static QName _Driver_QNAME = new QName("http://gocheeta.jemeisha.com/", "Driver");
     private final static QName _GetAllOrdersResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "getAllOrdersResponse");
     private final static QName _GetAllOrders_QNAME = new QName("http://gocheeta.jemeisha.com/", "getAllOrders");
+    private final static QName _GetLoggedInUserResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "getLoggedInUserResponse");
+    private final static QName _GetAllVehicleCategories_QNAME = new QName("http://gocheeta.jemeisha.com/", "getAllVehicleCategories");
     private final static QName _GetBookingInfomationResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "getBookingInfomationResponse");
     private final static QName _Login_QNAME = new QName("http://gocheeta.jemeisha.com/", "login");
     private final static QName _Return_QNAME = new QName("go_cheeta", "return");
     private final static QName _LoginDriverResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "loginDriverResponse");
     private final static QName _RegisterResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "registerResponse");
     private final static QName _IsDriverLoggedIn_QNAME = new QName("http://gocheeta.jemeisha.com/", "isDriverLoggedIn");
+    private final static QName _GetAllBranches_QNAME = new QName("http://gocheeta.jemeisha.com/", "getAllBranches");
     private final static QName _IsLoggedIn_QNAME = new QName("http://gocheeta.jemeisha.com/", "isLoggedIn");
     private final static QName _Register_QNAME = new QName("http://gocheeta.jemeisha.com/", "register");
+    private final static QName _GetAllVehicleCategoriesResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "getAllVehicleCategoriesResponse");
     private final static QName _LoginResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "loginResponse");
     private final static QName _SayHello_QNAME = new QName("http://gocheeta.jemeisha.com/", "sayHello");
     private final static QName _GetAllCustomersResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "getAllCustomersResponse");
+    private final static QName _BookARideResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "bookARideResponse");
     private final static QName _SayHelloResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "sayHelloResponse");
+    private final static QName _BookARide_QNAME = new QName("http://gocheeta.jemeisha.com/", "bookARide");
+    private final static QName _Exception_QNAME = new QName("http://gocheeta.jemeisha.com/", "Exception");
     private final static QName _GetAllDriversWithVehicles_QNAME = new QName("http://gocheeta.jemeisha.com/", "getAllDriversWithVehicles");
     private final static QName _IsLoggedInResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "isLoggedInResponse");
 
@@ -93,6 +104,22 @@ public class ObjectFactory {
      */
     public LoginAdmin createLoginAdmin() {
         return new LoginAdmin();
+    }
+
+    /**
+     * Create an instance of {@link Category }
+     * 
+     */
+    public Category createCategory() {
+        return new Category();
+    }
+
+    /**
+     * Create an instance of {@link GetAllBranchesResponse }
+     * 
+     */
+    public GetAllBranchesResponse createGetAllBranchesResponse() {
+        return new GetAllBranchesResponse();
     }
 
     /**
@@ -144,6 +171,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetAllVehicleCategories }
+     * 
+     */
+    public GetAllVehicleCategories createGetAllVehicleCategories() {
+        return new GetAllVehicleCategories();
+    }
+
+    /**
      * Create an instance of {@link GetBookingInfomationResponse }
      * 
      */
@@ -160,11 +195,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetLoggedInUserResponse }
+     * 
+     */
+    public GetLoggedInUserResponse createGetLoggedInUserResponse() {
+        return new GetLoggedInUserResponse();
+    }
+
+    /**
      * Create an instance of {@link GetAllCustomers }
      * 
      */
     public GetAllCustomers createGetAllCustomers() {
         return new GetAllCustomers();
+    }
+
+    /**
+     * Create an instance of {@link Branch }
+     * 
+     */
+    public Branch createBranch() {
+        return new Branch();
     }
 
     /**
@@ -197,6 +248,14 @@ public class ObjectFactory {
      */
     public GetAllDriversWithVehiclesResponse createGetAllDriversWithVehiclesResponse() {
         return new GetAllDriversWithVehiclesResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetLoggedInUser }
+     * 
+     */
+    public GetLoggedInUser createGetLoggedInUser() {
+        return new GetLoggedInUser();
     }
 
     /**
@@ -240,6 +299,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link BookARideResponse }
+     * 
+     */
+    public BookARideResponse createBookARideResponse() {
+        return new BookARideResponse();
+    }
+
+    /**
+     * Create an instance of {@link BookARide }
+     * 
+     */
+    public BookARide createBookARide() {
+        return new BookARide();
+    }
+
+    /**
      * Create an instance of {@link SayHelloResponse }
      * 
      */
@@ -256,11 +331,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Exception }
+     * 
+     */
+    public Exception createException() {
+        return new Exception();
+    }
+
+    /**
      * Create an instance of {@link GetAllDriversWithVehicles }
      * 
      */
     public GetAllDriversWithVehicles createGetAllDriversWithVehicles() {
         return new GetAllDriversWithVehicles();
+    }
+
+    /**
+     * Create an instance of {@link GetAllBranches }
+     * 
+     */
+    public GetAllBranches createGetAllBranches() {
+        return new GetAllBranches();
     }
 
     /**
@@ -293,6 +384,14 @@ public class ObjectFactory {
      */
     public IsLoggedIn createIsLoggedIn() {
         return new IsLoggedIn();
+    }
+
+    /**
+     * Create an instance of {@link GetAllVehicleCategoriesResponse }
+     * 
+     */
+    public GetAllVehicleCategoriesResponse createGetAllVehicleCategoriesResponse() {
+        return new GetAllVehicleCategoriesResponse();
     }
 
     /**
@@ -356,6 +455,24 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Branch }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "Branch")
+    public JAXBElement<Branch> createBranch(Branch value) {
+        return new JAXBElement<Branch>(_Branch_QNAME, Branch.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetLoggedInUser }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "getLoggedInUser")
+    public JAXBElement<GetLoggedInUser> createGetLoggedInUser(GetLoggedInUser value) {
+        return new JAXBElement<GetLoggedInUser>(_GetLoggedInUser_QNAME, GetLoggedInUser.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetAllDriversWithVehiclesResponse }{@code >}}
      * 
      */
@@ -380,6 +497,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "isDriverLoggedInResponse")
     public JAXBElement<IsDriverLoggedInResponse> createIsDriverLoggedInResponse(IsDriverLoggedInResponse value) {
         return new JAXBElement<IsDriverLoggedInResponse>(_IsDriverLoggedInResponse_QNAME, IsDriverLoggedInResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Category }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "Category")
+    public JAXBElement<Category> createCategory(Category value) {
+        return new JAXBElement<Category>(_Category_QNAME, Category.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllBranchesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "getAllBranchesResponse")
+    public JAXBElement<GetAllBranchesResponse> createGetAllBranchesResponse(GetAllBranchesResponse value) {
+        return new JAXBElement<GetAllBranchesResponse>(_GetAllBranchesResponse_QNAME, GetAllBranchesResponse.class, null, value);
     }
 
     /**
@@ -473,6 +608,24 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetLoggedInUserResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "getLoggedInUserResponse")
+    public JAXBElement<GetLoggedInUserResponse> createGetLoggedInUserResponse(GetLoggedInUserResponse value) {
+        return new JAXBElement<GetLoggedInUserResponse>(_GetLoggedInUserResponse_QNAME, GetLoggedInUserResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllVehicleCategories }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "getAllVehicleCategories")
+    public JAXBElement<GetAllVehicleCategories> createGetAllVehicleCategories(GetAllVehicleCategories value) {
+        return new JAXBElement<GetAllVehicleCategories>(_GetAllVehicleCategories_QNAME, GetAllVehicleCategories.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetBookingInfomationResponse }{@code >}}
      * 
      */
@@ -527,6 +680,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllBranches }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "getAllBranches")
+    public JAXBElement<GetAllBranches> createGetAllBranches(GetAllBranches value) {
+        return new JAXBElement<GetAllBranches>(_GetAllBranches_QNAME, GetAllBranches.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link IsLoggedIn }{@code >}}
      * 
      */
@@ -542,6 +704,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "register")
     public JAXBElement<Register> createRegister(Register value) {
         return new JAXBElement<Register>(_Register_QNAME, Register.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllVehicleCategoriesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "getAllVehicleCategoriesResponse")
+    public JAXBElement<GetAllVehicleCategoriesResponse> createGetAllVehicleCategoriesResponse(GetAllVehicleCategoriesResponse value) {
+        return new JAXBElement<GetAllVehicleCategoriesResponse>(_GetAllVehicleCategoriesResponse_QNAME, GetAllVehicleCategoriesResponse.class, null, value);
     }
 
     /**
@@ -572,12 +743,39 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BookARideResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "bookARideResponse")
+    public JAXBElement<BookARideResponse> createBookARideResponse(BookARideResponse value) {
+        return new JAXBElement<BookARideResponse>(_BookARideResponse_QNAME, BookARideResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SayHelloResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "sayHelloResponse")
     public JAXBElement<SayHelloResponse> createSayHelloResponse(SayHelloResponse value) {
         return new JAXBElement<SayHelloResponse>(_SayHelloResponse_QNAME, SayHelloResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BookARide }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "bookARide")
+    public JAXBElement<BookARide> createBookARide(BookARide value) {
+        return new JAXBElement<BookARide>(_BookARide_QNAME, BookARide.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Exception }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "Exception")
+    public JAXBElement<Exception> createException(Exception value) {
+        return new JAXBElement<Exception>(_Exception_QNAME, Exception.class, null, value);
     }
 
     /**

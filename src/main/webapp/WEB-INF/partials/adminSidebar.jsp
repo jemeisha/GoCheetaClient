@@ -28,6 +28,11 @@
                         Branches
                     </a>
 
+                    <a class="nav-link" href="/admin/vehicle-categories" >
+                        <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                        Vehicle Categories
+                    </a>
+
                     <a class="nav-link" href="/admin/drivers" >
                         <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                         Manage Drivers

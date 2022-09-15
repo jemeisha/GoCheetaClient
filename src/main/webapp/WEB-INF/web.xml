@@ -26,6 +26,11 @@
   </servlet>
 
   <servlet>
+    <servlet-name>createOrder</servlet-name>
+    <servlet-class>com.jemeisha.endpoints.CreateOrder</servlet-class>
+  </servlet>
+
+  <servlet>
     <servlet-name>adminDrivers</servlet-name>
     <jsp-file>/admin/drivers.jsp</jsp-file>
   </servlet>
@@ -38,6 +43,21 @@
   <servlet>
     <servlet-name>adminBookings</servlet-name>
     <jsp-file>/admin/adminBookings.jsp</jsp-file>
+  </servlet>
+
+  <servlet>
+    <servlet-name>adminBranches</servlet-name>
+    <jsp-file>/admin/branches.jsp</jsp-file>
+  </servlet>
+
+  <servlet>
+    <servlet-name>adminVehicleCategory</servlet-name>
+    <jsp-file>/admin/vehicleCategories.jsp</jsp-file>
+  </servlet>
+
+  <servlet>
+    <servlet-name>customerPanel</servlet-name>
+    <jsp-file>/customerPanel.jsp</jsp-file>
   </servlet>
 
   <servlet-mapping>
@@ -73,5 +93,26 @@
   <servlet-mapping>
     <servlet-name>adminBookings</servlet-name>
     <url-pattern>/admin/bookings</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>adminBranches</servlet-name>
+    <url-pattern>/admin/branches</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet-mapping>
+    <servlet-name>adminVehicleCategory</servlet-name>
+    <url-pattern>/admin/vehicle-categories</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>customerPanel</servlet-name>
+    <url-pattern>/customer-panel</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>createOrder</servlet-name>
+    <url-pattern>/create-order</url-pattern>
   </servlet-mapping>
 </web-app>

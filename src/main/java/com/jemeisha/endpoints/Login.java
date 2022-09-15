@@ -31,6 +31,10 @@ public class Login extends HttpServlet {
         try {
 
             String token= logic.login(username,password);
+            if(token==null){
+                resp.sendRedirect("/login");
+                return;
+            }
             Cookie cookie = Util.createCustomerCookie(token);
             resp.addCookie(cookie);
 

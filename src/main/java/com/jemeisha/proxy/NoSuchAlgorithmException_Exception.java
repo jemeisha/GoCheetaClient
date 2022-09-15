@@ -12,7 +12,7 @@ import javax.xml.ws.WebFault;
  */
 @WebFault(name = "NoSuchAlgorithmException", targetNamespace = "http://gocheeta.jemeisha.com/")
 public class NoSuchAlgorithmException_Exception
-    extends Exception
+    extends java.lang.Exception
 {
 
     /**

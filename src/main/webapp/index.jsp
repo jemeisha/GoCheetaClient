@@ -1,6 +1,7 @@
 <%@ page import="com.jemeisha.proxy.LogicService" %>
 <%@ page import="com.jemeisha.proxy.Logic" %>
 <%@ page import="com.jemeisha.Util" %>
+<%@ page import="com.jemeisha.proxy.Branch" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,6 +19,9 @@
 <body>
 <%
     boolean isLoggedIn= Util.isCustomerLoggedIn(request);
+
+    LogicService logicService= new LogicService();
+    Logic logic= logicService.getLogicPort();
 
 
 %>
@@ -271,69 +275,47 @@
                 </div>
 
                 <div class="col-md-7 padding70 bg-yellow">
-                    <form>
+                    <form action="/create-order" method="post">
                         <div class="row">
+                            <%
+                            Branch[] branches=logic.getAllBranches().toArray(new Branch[0]);
 
-
-                            <div class="col-sm-6">
-                                <div class="btn-group bootstrap-select input-group-btn form-control dropup">
-                                    <div class="btn-group" role="group">
-                                        <button id="btnGroupDrop1" type="button" class="btn dropdown-toggle btn-default bs-placeholder btn-default-custom" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Select Pickup
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                            <a class="dropdown-item" href="#">Nugegoda</a>
-                                            <a class="dropdown-item" href="#">Gampaha</a>
-                                            <a class="dropdown-item" href="#">Galle</a>
-                                            <a class="dropdown-item" href="#">Kandy</a>
-                                            <a class="dropdown-item" href="#">Kurunegala</a>
-                                            <a class="dropdown-item" href="#">Jaffna</a>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="btn-group bootstrap-select input-group-btn form-control dropup">
-                                    <div class="btn-group" role="group">
-                                        <button id="btnGroupDrop1" type="button" class="btn dropdown-toggle btn-default bs-placeholder btn-default-custom" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Select Destination
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                            <a class="dropdown-item" href="#">Nugegoda</a>
-                                            <a class="dropdown-item" href="#">Gampaha</a>
-                                            <a class="dropdown-item" href="#">Galle</a>
-                                            <a class="dropdown-item" href="#">Kandy</a>
-                                            <a class="dropdown-item" href="#">Kurunegala</a>
-                                            <a class="dropdown-item" href="#">Jaffna</a>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="btn-group bootstrap-select input-group-btn form-control dropup">
-                                    <input type="text" name="" class="form-input" placeholder="Pickup location">
-                                </div>
-                            </div>
+                            %>
 
                             <div class="col-sm-6">
-                                <div class="btn-group bootstrap-select input-group-btn form-control dropup">
-                                    <input type="text" name="" class="form-input " placeholder="Drop of Location">
-                                </div>
+                                <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="cars" id="cars">
+                                    <%
+                                        for(int x=0;x< branches.length;x++){
+                                            Branch b=branches[x];
+
+                                    %>
+                                    <option value="<%=b.getBranchId()%>"><%=b.getBranchName()%></option>
+                                    <%
+                                        }
+                                    %>
+                                </select>
+
                             </div>
+                            <div class="col-sm-6">
+                                <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="cars" id="cars">
+                                    <%
+                                        for(int x=0;x< branches.length;x++){
+                                            Branch b=branches[x];
 
-
+                                    %>
+                                    <option value="<%=b.getBranchId()%>"><%=b.getBranchName()%></option>
+                                    <%
+                                        }
+                                    %>
+                                </select>
+                            </div>
 
                         </div>
 
 
+                        <div class="col-sm-12 ">TOTAL :</div>
                         <div class="col-sm-12 ">
-                            <div class="buttons">
-                                <button type="button" class="btn btn-light btn-cus">ORDER NOW</button>
-
-                                <button type="button" class="btn btn-success btn-cus">RESET</button>
-                            </div>
+                            <button type="submit" class="btn btn-light btn-cus">ORDER NOW</button>
                         </div>
 
 

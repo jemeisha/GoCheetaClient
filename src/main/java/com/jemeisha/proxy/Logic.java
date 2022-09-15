@@ -60,54 +60,6 @@ public interface Logic {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<com.jemeisha.proxy.Order>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getAllOrders", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetAllOrders")
-    @ResponseWrapper(localName = "getAllOrdersResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetAllOrdersResponse")
-    @Action(input = "http://gocheeta.jemeisha.com/Logic/getAllOrdersRequest", output = "http://gocheeta.jemeisha.com/Logic/getAllOrdersResponse")
-    public List<Order> getAllOrders();
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<com.jemeisha.proxy.Customer>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getAllCustomers", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetAllCustomers")
-    @ResponseWrapper(localName = "getAllCustomersResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetAllCustomersResponse")
-    @Action(input = "http://gocheeta.jemeisha.com/Logic/getAllCustomersRequest", output = "http://gocheeta.jemeisha.com/Logic/getAllCustomersResponse")
-    public List<Customer> getAllCustomers();
-
-    /**
-     * 
-     * @return
-     *     returns com.jemeisha.proxy.BookingInfomation
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getBookingInfomation", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetBookingInfomation")
-    @ResponseWrapper(localName = "getBookingInfomationResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetBookingInfomationResponse")
-    @Action(input = "http://gocheeta.jemeisha.com/Logic/getBookingInfomationRequest", output = "http://gocheeta.jemeisha.com/Logic/getBookingInfomationResponse")
-    public BookingInfomation getBookingInfomation();
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<com.jemeisha.proxy.Driver>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getAllDriversWithVehicles", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetAllDriversWithVehicles")
-    @ResponseWrapper(localName = "getAllDriversWithVehiclesResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetAllDriversWithVehiclesResponse")
-    @Action(input = "http://gocheeta.jemeisha.com/Logic/getAllDriversWithVehiclesRequest", output = "http://gocheeta.jemeisha.com/Logic/getAllDriversWithVehiclesResponse")
-    public List<Driver> getAllDriversWithVehicles();
-
-    /**
-     * 
      * @param arg1
      * @param arg0
      * @return
@@ -132,14 +84,26 @@ public interface Logic {
     /**
      * 
      * @return
-     *     returns java.lang.String
+     *     returns java.util.List<com.jemeisha.proxy.Driver>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "sayHello", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.SayHello")
-    @ResponseWrapper(localName = "sayHelloResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.SayHelloResponse")
-    @Action(input = "http://gocheeta.jemeisha.com/Logic/sayHelloRequest", output = "http://gocheeta.jemeisha.com/Logic/sayHelloResponse")
-    public String sayHello();
+    @RequestWrapper(localName = "getAllDriversWithVehicles", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetAllDriversWithVehicles")
+    @ResponseWrapper(localName = "getAllDriversWithVehiclesResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetAllDriversWithVehiclesResponse")
+    @Action(input = "http://gocheeta.jemeisha.com/Logic/getAllDriversWithVehiclesRequest", output = "http://gocheeta.jemeisha.com/Logic/getAllDriversWithVehiclesResponse")
+    public List<Driver> getAllDriversWithVehicles();
+
+    /**
+     * 
+     * @return
+     *     returns com.jemeisha.proxy.BookingInfomation
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getBookingInfomation", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetBookingInfomation")
+    @ResponseWrapper(localName = "getBookingInfomationResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetBookingInfomationResponse")
+    @Action(input = "http://gocheeta.jemeisha.com/Logic/getBookingInfomationRequest", output = "http://gocheeta.jemeisha.com/Logic/getBookingInfomationResponse")
+    public BookingInfomation getBookingInfomation();
 
     /**
      * 
@@ -153,6 +117,98 @@ public interface Logic {
     @ResponseWrapper(localName = "isDriverLoggedInResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.IsDriverLoggedInResponse")
     @Action(input = "http://gocheeta.jemeisha.com/Logic/isDriverLoggedInRequest", output = "http://gocheeta.jemeisha.com/Logic/isDriverLoggedInResponse")
     public boolean isDriverLoggedIn(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<com.jemeisha.proxy.Driver>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getAllDrivers", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetAllDrivers")
+    @ResponseWrapper(localName = "getAllDriversResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetAllDriversResponse")
+    @Action(input = "http://gocheeta.jemeisha.com/Logic/getAllDriversRequest", output = "http://gocheeta.jemeisha.com/Logic/getAllDriversResponse")
+    public List<Driver> getAllDrivers();
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "isLoggedIn", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.IsLoggedIn")
+    @ResponseWrapper(localName = "isLoggedInResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.IsLoggedInResponse")
+    @Action(input = "http://gocheeta.jemeisha.com/Logic/isLoggedInRequest", output = "http://gocheeta.jemeisha.com/Logic/isLoggedInResponse")
+    public boolean isLoggedIn(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<com.jemeisha.proxy.Order>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getAllOrders", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetAllOrders")
+    @ResponseWrapper(localName = "getAllOrdersResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetAllOrdersResponse")
+    @Action(input = "http://gocheeta.jemeisha.com/Logic/getAllOrdersRequest", output = "http://gocheeta.jemeisha.com/Logic/getAllOrdersResponse")
+    public List<Order> getAllOrders();
+
+    /**
+     * 
+     * @param arg2
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns com.jemeisha.proxy.Order
+     * @throws Exception_Exception
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "bookARide", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.BookARide")
+    @ResponseWrapper(localName = "bookARideResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.BookARideResponse")
+    @Action(input = "http://gocheeta.jemeisha.com/Logic/bookARideRequest", output = "http://gocheeta.jemeisha.com/Logic/bookARideResponse", fault = {
+        @FaultAction(className = Exception_Exception.class, value = "http://gocheeta.jemeisha.com/Logic/bookARide/Fault/Exception")
+    })
+    public Order bookARide(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        int arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        int arg2)
+        throws Exception_Exception
+    ;
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<com.jemeisha.proxy.Customer>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getAllCustomers", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetAllCustomers")
+    @ResponseWrapper(localName = "getAllCustomersResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetAllCustomersResponse")
+    @Action(input = "http://gocheeta.jemeisha.com/Logic/getAllCustomersRequest", output = "http://gocheeta.jemeisha.com/Logic/getAllCustomersResponse")
+    public List<Customer> getAllCustomers();
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "isAdminLoggedIn", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.IsAdminLoggedIn")
+    @ResponseWrapper(localName = "isAdminLoggedInResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.IsAdminLoggedInResponse")
+    @Action(input = "http://gocheeta.jemeisha.com/Logic/isAdminLoggedInRequest", output = "http://gocheeta.jemeisha.com/Logic/isAdminLoggedInResponse")
+    public boolean isAdminLoggedIn(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
 
@@ -177,29 +233,14 @@ public interface Logic {
     /**
      * 
      * @return
-     *     returns java.util.List<com.jemeisha.proxy.Driver>
+     *     returns java.lang.String
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getAllDrivers", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetAllDrivers")
-    @ResponseWrapper(localName = "getAllDriversResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetAllDriversResponse")
-    @Action(input = "http://gocheeta.jemeisha.com/Logic/getAllDriversRequest", output = "http://gocheeta.jemeisha.com/Logic/getAllDriversResponse")
-    public List<Driver> getAllDrivers();
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "isAdminLoggedIn", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.IsAdminLoggedIn")
-    @ResponseWrapper(localName = "isAdminLoggedInResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.IsAdminLoggedInResponse")
-    @Action(input = "http://gocheeta.jemeisha.com/Logic/isAdminLoggedInRequest", output = "http://gocheeta.jemeisha.com/Logic/isAdminLoggedInResponse")
-    public boolean isAdminLoggedIn(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
+    @RequestWrapper(localName = "sayHello", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.SayHello")
+    @ResponseWrapper(localName = "sayHelloResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.SayHelloResponse")
+    @Action(input = "http://gocheeta.jemeisha.com/Logic/sayHelloRequest", output = "http://gocheeta.jemeisha.com/Logic/sayHelloResponse")
+    public String sayHello();
 
     /**
      * 
@@ -228,15 +269,39 @@ public interface Logic {
      * 
      * @param arg0
      * @return
-     *     returns boolean
+     *     returns com.jemeisha.proxy.Customer
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "isLoggedIn", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.IsLoggedIn")
-    @ResponseWrapper(localName = "isLoggedInResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.IsLoggedInResponse")
-    @Action(input = "http://gocheeta.jemeisha.com/Logic/isLoggedInRequest", output = "http://gocheeta.jemeisha.com/Logic/isLoggedInResponse")
-    public boolean isLoggedIn(
+    @RequestWrapper(localName = "getLoggedInUser", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetLoggedInUser")
+    @ResponseWrapper(localName = "getLoggedInUserResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetLoggedInUserResponse")
+    @Action(input = "http://gocheeta.jemeisha.com/Logic/getLoggedInUserRequest", output = "http://gocheeta.jemeisha.com/Logic/getLoggedInUserResponse")
+    public Customer getLoggedInUser(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<com.jemeisha.proxy.Branch>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getAllBranches", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetAllBranches")
+    @ResponseWrapper(localName = "getAllBranchesResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetAllBranchesResponse")
+    @Action(input = "http://gocheeta.jemeisha.com/Logic/getAllBranchesRequest", output = "http://gocheeta.jemeisha.com/Logic/getAllBranchesResponse")
+    public List<Branch> getAllBranches();
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<com.jemeisha.proxy.Category>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getAllVehicleCategories", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetAllVehicleCategories")
+    @ResponseWrapper(localName = "getAllVehicleCategoriesResponse", targetNamespace = "http://gocheeta.jemeisha.com/", className = "com.jemeisha.proxy.GetAllVehicleCategoriesResponse")
+    @Action(input = "http://gocheeta.jemeisha.com/Logic/getAllVehicleCategoriesRequest", output = "http://gocheeta.jemeisha.com/Logic/getAllVehicleCategoriesResponse")
+    public List<Category> getAllVehicleCategories();
 
 }

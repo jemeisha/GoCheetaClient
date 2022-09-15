@@ -1,5 +1,6 @@
 package com.jemeisha;
 
+import com.jemeisha.proxy.Customer;
 import com.jemeisha.proxy.Logic;
 import com.jemeisha.proxy.LogicService;
 
@@ -120,5 +121,28 @@ public class Util {
             isLoggedIn=logic.isAdminLoggedIn(loginCookie.getValue());
         }
         return isLoggedIn;
+    }
+
+    public static Customer getLoggedInCustomer(HttpServletRequest request){
+
+        LogicService logicService= new LogicService();
+        Logic logic= logicService.getLogicPort();
+
+        Cookie[] cookies= request.getCookies(); //get all cookies
+
+        Cookie loginCookie=null;
+        for(int x=0;x<cookies.length;x++){
+            if(cookies[x].getName().equals(CUSTOMER_COOKIE)){
+                loginCookie=cookies[x];
+                break;
+            }
+        }
+
+        Customer c= null;
+        System.out.println("c-"+loginCookie!=null);
+        if(loginCookie!=null){
+            c=logic.getLoggedInUser(loginCookie.getValue());
+        }
+        return c;
     }
 }
