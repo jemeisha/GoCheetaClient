@@ -25,5 +25,19 @@
       <div class="text-lg "><%=request.getParameter("total")%></div>
     </div>
   </div>
+  <div class=" mx-auto text-lg text-gray-500 font-bold my-3">Driver & Vehicle infomation</div>
+
+  <jsp:include page="/WEB-INF/partials/driverRow.jsp">
+    <jsp:param name="driverId" value="<%=request.getParameter("driverId")%>"/>
+    <jsp:param name="driverFName" value="<%=request.getParameter("driverFName")%>"/>
+    <jsp:param name="driverLName" value="<%=request.getParameter("driverLName")%>"/>
+    <jsp:param name="driverNic" value="<%=request.getParameter("driverNic")%>"/>
+    <jsp:param name="driverMobile" value="<%=request.getParameter("driverMobile")%>"/>
+    <jsp:param name="branchId" value="<%=request.getParameter("branchId")%>"/>
+    <jsp:param name="vNo" value="<%=request.getParameter("vNo")%>"/>
+    <jsp:param name="vType" value="<%=request.getParameter("vType")%>"/>
+    <jsp:param name="noOfSeats" value="<%=request.getParameter("noOfSeats")%>"/>
+    <jsp:param name="vColour" value="<%=request.getParameter("vColour")%>"/>
+  </jsp:include>
 
 </div>

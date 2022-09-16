@@ -16,7 +16,7 @@ import java.io.PrintWriter;
 public class LoginDriver extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/driver/driverLogin.jsp").forward(req,resp);
+        req.getRequestDispatcher("/driverLogin.jsp").forward(req,resp);
     }
 
     @Override
@@ -29,8 +29,14 @@ public class LoginDriver extends HttpServlet {
         Logic logic=logicService.getLogicPort();
 
         try {
-
+            System.out.println(username);
+            System.out.println(password);
             String token= logic.loginDriver(username, password);
+            System.out.println(token);
+            if(token==null){
+                resp.sendRedirect("/driver-login");
+                return;
+            }
             Cookie cookie = Util.createDriverCookie(token);
             resp.addCookie(cookie);
 

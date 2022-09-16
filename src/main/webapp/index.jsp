@@ -283,7 +283,7 @@
                             %>
 
                             <div class="col-sm-6">
-                                <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="cars" id="cars">
+                                <select name="pickup" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="cars" id="cars">
                                     <%
                                         for(int x=0;x< branches.length;x++){
                                             Branch b=branches[x];
@@ -297,7 +297,7 @@
 
                             </div>
                             <div class="col-sm-6">
-                                <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="cars" id="cars">
+                                <select name="destination" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="cars" id="cars">
                                     <%
                                         for(int x=0;x< branches.length;x++){
                                             Branch b=branches[x];

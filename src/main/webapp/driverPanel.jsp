@@ -24,17 +24,18 @@
     <%
         LogicService logicService = new LogicService();
         Logic logic = logicService.getLogicPort();
-        Customer c = Util.getLoggedInCustomer(request);
-        if (c == null) {
-            response.sendRedirect("/login");
-        }
-        Order ongoingOrder = logic.getCustomerOngoingBooking(c.getUsername());
+//        Driver c = Util.getLoggedInDriver(request);
+        Driver c = logic.getLoggedInDriver("x");
+//        if (c == null) {
+//            response.sendRedirect("/login");
+//        }
+        Order ongoingOrder = logic.getDriverOngoingBooking(c.getDriverId()+"");
         boolean isOngoingOrder = ongoingOrder != null;
 
         if (isOngoingOrder) {
             Branch pickup = logic.getBranchById(ongoingOrder.getPickup());
             Branch dest = logic.getBranchById(ongoingOrder.getDestination());
-            Driver d = ongoingOrder.getDriver();
+            Customer d = ongoingOrder.getCustomer();
     %>
     <div class="flex flex-col m-2 p-3 rounded border border-solid ">
         <div class=" mx-auto text-2xl font-bold mb-3">Current Booking</div>
@@ -55,19 +56,14 @@
                 </div>
             </div>
         </div>
-        <div class=" mx-auto text-lg text-gray-500 font-bold my-3">Driver & Vehicle infomation</div>
+        <div class=" mx-auto text-lg text-gray-500 font-bold my-3">Customer infomation</div>
 
-        <jsp:include page="/WEB-INF/partials/driverRow.jsp">
-            <jsp:param name="driverId" value="<%=d.getDriverId()%>"/>
-            <jsp:param name="driverFName" value="<%=d.getDriverFirstName()%>"/>
-            <jsp:param name="driverLName" value="<%=d.getDriverLastName()%>"/>
-            <jsp:param name="driverNic" value="<%=d.getDriverNic()%>"/>
-            <jsp:param name="driverMobile" value="<%=d.getDriverMobile()%>"/>
-            <jsp:param name="branchId" value="<%=d.getBranchId()%>"/>
-            <jsp:param name="vNo" value="<%=d.getVehicle().getVehicleNo()%>"/>
-            <jsp:param name="vType" value="<%=d.getVehicle().getVehicleType()%>"/>
-            <jsp:param name="noOfSeats" value="<%=d.getVehicle().getNoOfSeats()%>"/>
-            <jsp:param name="vColour" value="<%=d.getVehicle().getVehicleColour()%>"/>
+        <jsp:include page="/WEB-INF/partials/customerRow.jsp">
+            <jsp:param name="username" value="<%=d.getUsername()%>"/>
+            <jsp:param name="customerFName" value="<%=d.getCusFistName()%>"/>
+            <jsp:param name="customerLName" value="<%=d.getCusLastName()%>"/>
+            <jsp:param name="customerMobile" value="<%=d.getCusMobNo()%>"/>
+
         </jsp:include>
         <form class="flex flex-row">
             <div></div>
@@ -82,7 +78,7 @@
         <div class=" mx-auto text-xl text-gray-500 font-bold my-3">Booking history</div>
         <div class="flex flex-col">
             <%
-                Order orders[]= logic.getCustomerOrderHistory(c.getUsername()).toArray(new Order[0]);
+                Order orders[]= logic.getDriverOrderHistory(c.getDriverId()+"").toArray(new Order[0]);
                 for(int x=0;x< orders.length;x++){
                     Order d= orders[x];
                     System.out.println(d);

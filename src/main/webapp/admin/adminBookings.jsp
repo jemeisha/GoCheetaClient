@@ -63,7 +63,6 @@
                 <jsp:param name="pickup" value="<%=d.getPickup()%>"/>
                 <jsp:param name="destination" value="<%=d.getDestination()%>"/>
                 <jsp:param name="total" value="<%=d.getTotal()%>"/>
-
             </jsp:include>
             <%}%>
         </div>

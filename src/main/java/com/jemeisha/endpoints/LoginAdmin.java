@@ -30,6 +30,10 @@ public class LoginAdmin extends HttpServlet {
 
 
         String token = logic.loginAdmin(username, password);
+        if(token==null){
+            resp.sendRedirect("/admin/login");
+            return;
+        }
         Cookie cookie = Util.createAdminCookie(token);
 
         resp.addCookie(cookie);
