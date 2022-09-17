@@ -49,6 +49,24 @@
                 <div class="text-xl font-bold mb-auto"><%=dest.getBranchName()%>
                 </div>
             </div>
+            <%
+                String tripSt = "Driver Arriving";
+                switch(ongoingOrder.getBookingState()){
+                    case 1:{
+                        tripSt = "Driver Arrived";
+                        break;
+                    }
+                    case 2:{
+                        tripSt = "Trip Started";
+                        break;
+                    }
+                }
+            %>
+            <div class="w-32 px-3 flex flex-col">
+                <div class="text-base mt-auto">Trip Status</div>
+                <div class="text-xl font-bold mb-auto"><%=tripSt%>
+                </div>
+            </div>
             <div class="w-32 px-3 flex flex-col mr-auto">
                 <div class="text-base mt-auto">Total</div>
                 <div class="text-xl font-bold mb-auto"><%=ongoingOrder.getTotal()%>
@@ -90,8 +108,8 @@
 
             <jsp:include page="/WEB-INF/partials/bookingRow.jsp">
                 <jsp:param name="orderId" value="<%=d.getOrderID()%>"/>
-                <jsp:param name="pickup" value="<%=d.getPickup()%>"/>
-                <jsp:param name="destination" value="<%=d.getDestination()%>"/>
+                <jsp:param name="pickup" value="<%=d.getPickupObj().getBranchName()%>"/>
+                <jsp:param name="destination" value="<%=d.getDestinationObj().getBranchName()%>"/>
                 <jsp:param name="total" value="<%=d.getTotal()%>"/>
                 <jsp:param name="driverId" value="<%=d.getDriver().getDriverId()%>"/>
                 <jsp:param name="driverFName" value="<%=d.getDriver().getDriverFirstName()%>"/>

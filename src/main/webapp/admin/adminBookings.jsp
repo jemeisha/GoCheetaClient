@@ -28,14 +28,14 @@
 
     BookingInfomation bookingInfomation= logic.getBookingInfomation();
 %>
-<div class=" w-full">
+<div class="w-full">
     <%@ include file="/WEB-INF/partials/adminHeader.jsp"%>
 </div>
-<div class="flex flex-row h-full">
-    <div class="grow-0 shrink overflow-x-hidden">
+<div class="flex flex-row h-full w-full">
+    <div class="grow overflow-x-hidden">
         <%@ include file="/WEB-INF/partials/adminSidebar.jsp"%>
     </div>
-    <div class="grow shrink-0 flex flex-col">
+    <div class="grow-0 shrink flex flex-col">
         <div class="w-full flex flex-row flex-wrap">
             <jsp:include page="/WEB-INF/partials/infoCard.jsp">
                 <jsp:param name="title" value="Total Bookings"/>
@@ -63,6 +63,16 @@
                 <jsp:param name="pickup" value="<%=d.getPickup()%>"/>
                 <jsp:param name="destination" value="<%=d.getDestination()%>"/>
                 <jsp:param name="total" value="<%=d.getTotal()%>"/>
+                <jsp:param name="driverId" value="<%=d.getDriver().getDriverId()%>"/>
+                <jsp:param name="driverFName" value="<%=d.getDriver().getDriverFirstName()%>"/>
+                <jsp:param name="driverLName" value="<%=d.getDriver().getDriverLastName()%>"/>
+                <jsp:param name="driverNic" value="<%=d.getDriver().getDriverNic()%>"/>
+                <jsp:param name="driverMobile" value="<%=d.getDriver().getDriverMobile()%>"/>
+                <jsp:param name="branchId" value="<%=d.getDriver().getBranchId()%>"/>
+                <jsp:param name="vNo" value="<%=d.getDriver().getVehicle().getVehicleNo()%>"/>
+                <jsp:param name="vType" value="<%=d.getDriver().getVehicle().getVehicleType()%>"/>
+                <jsp:param name="noOfSeats" value="<%=d.getDriver().getVehicle().getNoOfSeats()%>"/>
+                <jsp:param name="vColour" value="<%=d.getDriver().getVehicle().getVehicleColour()%>"/>
             </jsp:include>
             <%}%>
         </div>

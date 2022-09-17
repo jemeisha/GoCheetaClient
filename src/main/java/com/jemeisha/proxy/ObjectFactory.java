@@ -26,6 +26,8 @@ public class ObjectFactory {
 
     private final static QName _GetAllCustomers_QNAME = new QName("http://gocheeta.jemeisha.com/", "getAllCustomers");
     private final static QName _GetCustomerOngoingBooking_QNAME = new QName("http://gocheeta.jemeisha.com/", "getCustomerOngoingBooking");
+    private final static QName _GetTotalSalesInfo_QNAME = new QName("http://gocheeta.jemeisha.com/", "getTotalSalesInfo");
+    private final static QName _GetTotalSalesInfoResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "getTotalSalesInfoResponse");
     private final static QName _LoginAdminResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "loginAdminResponse");
     private final static QName _GetLoggedInUser_QNAME = new QName("http://gocheeta.jemeisha.com/", "getLoggedInUser");
     private final static QName _GetAllDriversWithVehiclesResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "getAllDriversWithVehiclesResponse");
@@ -49,9 +51,11 @@ public class ObjectFactory {
     private final static QName _LoginResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "loginResponse");
     private final static QName _SayHello_QNAME = new QName("http://gocheeta.jemeisha.com/", "sayHello");
     private final static QName _BookARideResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "bookARideResponse");
+    private final static QName _GetTotalSalesByBranchResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "getTotalSalesByBranchResponse");
     private final static QName _GetLoggedInDriverResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "getLoggedInDriverResponse");
     private final static QName _SayHelloResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "sayHelloResponse");
     private final static QName _IsLoggedInResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "isLoggedInResponse");
+    private final static QName _ChangeOrderStatus_QNAME = new QName("http://gocheeta.jemeisha.com/", "changeOrderStatus");
     private final static QName _IsAdminLoggedIn_QNAME = new QName("http://gocheeta.jemeisha.com/", "isAdminLoggedIn");
     private final static QName _LoginDriver_QNAME = new QName("http://gocheeta.jemeisha.com/", "loginDriver");
     private final static QName _Branch_QNAME = new QName("http://gocheeta.jemeisha.com/", "Branch");
@@ -63,6 +67,8 @@ public class ObjectFactory {
     private final static QName _GetAllDrivers_QNAME = new QName("http://gocheeta.jemeisha.com/", "getAllDrivers");
     private final static QName _LoginAdmin_QNAME = new QName("http://gocheeta.jemeisha.com/", "loginAdmin");
     private final static QName _GetDriverOngoingBooking_QNAME = new QName("http://gocheeta.jemeisha.com/", "getDriverOngoingBooking");
+    private final static QName _ChangeOrderStatusResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "changeOrderStatusResponse");
+    private final static QName _GetTotalSalesByBranch_QNAME = new QName("http://gocheeta.jemeisha.com/", "getTotalSalesByBranch");
     private final static QName _Driver_QNAME = new QName("http://gocheeta.jemeisha.com/", "Driver");
     private final static QName _GetBookingInfomationResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "getBookingInfomationResponse");
     private final static QName _Login_QNAME = new QName("http://gocheeta.jemeisha.com/", "login");
@@ -191,6 +197,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetTotalSalesInfo }
+     * 
+     */
+    public GetTotalSalesInfo createGetTotalSalesInfo() {
+        return new GetTotalSalesInfo();
+    }
+
+    /**
+     * Create an instance of {@link GetTotalSalesInfoResponse }
+     * 
+     */
+    public GetTotalSalesInfoResponse createGetTotalSalesInfoResponse() {
+        return new GetTotalSalesInfoResponse();
+    }
+
+    /**
      * Create an instance of {@link GetCustomerOngoingBooking }
      * 
      */
@@ -252,6 +274,14 @@ public class ObjectFactory {
      */
     public SayHello createSayHello() {
         return new SayHello();
+    }
+
+    /**
+     * Create an instance of {@link GetTotalSalesByBranchResponse }
+     * 
+     */
+    public GetTotalSalesByBranchResponse createGetTotalSalesByBranchResponse() {
+        return new GetTotalSalesByBranchResponse();
     }
 
     /**
@@ -343,6 +373,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ChangeOrderStatusResponse }
+     * 
+     */
+    public ChangeOrderStatusResponse createChangeOrderStatusResponse() {
+        return new ChangeOrderStatusResponse();
+    }
+
+    /**
      * Create an instance of {@link GetDriverOngoingBooking }
      * 
      */
@@ -359,6 +397,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetTotalSalesByBranch }
+     * 
+     */
+    public GetTotalSalesByBranch createGetTotalSalesByBranch() {
+        return new GetTotalSalesByBranch();
+    }
+
+    /**
      * Create an instance of {@link Login }
      * 
      */
@@ -372,6 +418,14 @@ public class ObjectFactory {
      */
     public GetBookingInfomationResponse createGetBookingInfomationResponse() {
         return new GetBookingInfomationResponse();
+    }
+
+    /**
+     * Create an instance of {@link ChangeOrderStatus }
+     * 
+     */
+    public ChangeOrderStatus createChangeOrderStatus() {
+        return new ChangeOrderStatus();
     }
 
     /**
@@ -527,6 +581,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link SalesInfo }
+     * 
+     */
+    public SalesInfo createSalesInfo() {
+        return new SalesInfo();
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetAllCustomers }{@code >}}
      * 
      */
@@ -542,6 +604,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "getCustomerOngoingBooking")
     public JAXBElement<GetCustomerOngoingBooking> createGetCustomerOngoingBooking(GetCustomerOngoingBooking value) {
         return new JAXBElement<GetCustomerOngoingBooking>(_GetCustomerOngoingBooking_QNAME, GetCustomerOngoingBooking.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetTotalSalesInfo }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "getTotalSalesInfo")
+    public JAXBElement<GetTotalSalesInfo> createGetTotalSalesInfo(GetTotalSalesInfo value) {
+        return new JAXBElement<GetTotalSalesInfo>(_GetTotalSalesInfo_QNAME, GetTotalSalesInfo.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetTotalSalesInfoResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "getTotalSalesInfoResponse")
+    public JAXBElement<GetTotalSalesInfoResponse> createGetTotalSalesInfoResponse(GetTotalSalesInfoResponse value) {
+        return new JAXBElement<GetTotalSalesInfoResponse>(_GetTotalSalesInfoResponse_QNAME, GetTotalSalesInfoResponse.class, null, value);
     }
 
     /**
@@ -752,6 +832,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetTotalSalesByBranchResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "getTotalSalesByBranchResponse")
+    public JAXBElement<GetTotalSalesByBranchResponse> createGetTotalSalesByBranchResponse(GetTotalSalesByBranchResponse value) {
+        return new JAXBElement<GetTotalSalesByBranchResponse>(_GetTotalSalesByBranchResponse_QNAME, GetTotalSalesByBranchResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetLoggedInDriverResponse }{@code >}}
      * 
      */
@@ -776,6 +865,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "isLoggedInResponse")
     public JAXBElement<IsLoggedInResponse> createIsLoggedInResponse(IsLoggedInResponse value) {
         return new JAXBElement<IsLoggedInResponse>(_IsLoggedInResponse_QNAME, IsLoggedInResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ChangeOrderStatus }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "changeOrderStatus")
+    public JAXBElement<ChangeOrderStatus> createChangeOrderStatus(ChangeOrderStatus value) {
+        return new JAXBElement<ChangeOrderStatus>(_ChangeOrderStatus_QNAME, ChangeOrderStatus.class, null, value);
     }
 
     /**
@@ -875,6 +973,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "getDriverOngoingBooking")
     public JAXBElement<GetDriverOngoingBooking> createGetDriverOngoingBooking(GetDriverOngoingBooking value) {
         return new JAXBElement<GetDriverOngoingBooking>(_GetDriverOngoingBooking_QNAME, GetDriverOngoingBooking.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ChangeOrderStatusResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "changeOrderStatusResponse")
+    public JAXBElement<ChangeOrderStatusResponse> createChangeOrderStatusResponse(ChangeOrderStatusResponse value) {
+        return new JAXBElement<ChangeOrderStatusResponse>(_ChangeOrderStatusResponse_QNAME, ChangeOrderStatusResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetTotalSalesByBranch }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "getTotalSalesByBranch")
+    public JAXBElement<GetTotalSalesByBranch> createGetTotalSalesByBranch(GetTotalSalesByBranch value) {
+        return new JAXBElement<GetTotalSalesByBranch>(_GetTotalSalesByBranch_QNAME, GetTotalSalesByBranch.class, null, value);
     }
 
     /**

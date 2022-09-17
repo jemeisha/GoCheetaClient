@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark flex flex-row">
-  <a class="navbar-brand mr-auto" href="index.php">GO CHEETA</a>
+  <a class="navbar-brand mr-auto" href="/">GO CHEETA</a>
   <li class="nav-link">
     <a  href="feedback.php" style="color: white;"><i class="fa fa-comments" aria-hidden="true"></i> Customer Feedback</a>
   </li>
