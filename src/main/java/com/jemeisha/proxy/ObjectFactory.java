@@ -45,7 +45,9 @@ public class ObjectFactory {
     private final static QName _GetLoggedInUserResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "getLoggedInUserResponse");
     private final static QName _GetAllVehicleCategories_QNAME = new QName("http://gocheeta.jemeisha.com/", "getAllVehicleCategories");
     private final static QName _GetDriverOrderHistoryResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "getDriverOrderHistoryResponse");
+    private final static QName _RegisterDriver_QNAME = new QName("http://gocheeta.jemeisha.com/", "registerDriver");
     private final static QName _Return_QNAME = new QName("go_cheeta", "return");
+    private final static QName _RegisterDriverResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "registerDriverResponse");
     private final static QName _GetCustomerOrderHistoryResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "getCustomerOrderHistoryResponse");
     private final static QName _IsLoggedIn_QNAME = new QName("http://gocheeta.jemeisha.com/", "isLoggedIn");
     private final static QName _LoginResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "loginResponse");
@@ -63,6 +65,7 @@ public class ObjectFactory {
     private final static QName _IsDriverLoggedInResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "isDriverLoggedInResponse");
     private final static QName _Category_QNAME = new QName("http://gocheeta.jemeisha.com/", "Category");
     private final static QName _GetAllBranchesResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "getAllBranchesResponse");
+    private final static QName _GetDriverbyId_QNAME = new QName("http://gocheeta.jemeisha.com/", "getDriverbyId");
     private final static QName _GetDriverOrderHistory_QNAME = new QName("http://gocheeta.jemeisha.com/", "getDriverOrderHistory");
     private final static QName _GetAllDrivers_QNAME = new QName("http://gocheeta.jemeisha.com/", "getAllDrivers");
     private final static QName _LoginAdmin_QNAME = new QName("http://gocheeta.jemeisha.com/", "loginAdmin");
@@ -76,6 +79,7 @@ public class ObjectFactory {
     private final static QName _RegisterResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "registerResponse");
     private final static QName _IsDriverLoggedIn_QNAME = new QName("http://gocheeta.jemeisha.com/", "isDriverLoggedIn");
     private final static QName _GetAllBranches_QNAME = new QName("http://gocheeta.jemeisha.com/", "getAllBranches");
+    private final static QName _GetDriverbyIdResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "getDriverbyIdResponse");
     private final static QName _Register_QNAME = new QName("http://gocheeta.jemeisha.com/", "register");
     private final static QName _GetAllVehicleCategoriesResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "getAllVehicleCategoriesResponse");
     private final static QName _GetBranchByIdResponse_QNAME = new QName("http://gocheeta.jemeisha.com/", "getBranchByIdResponse");
@@ -317,6 +321,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link RegisterDriver }
+     * 
+     */
+    public RegisterDriver createRegisterDriver() {
+        return new RegisterDriver();
+    }
+
+    /**
      * Create an instance of {@link GetCustomerOrderHistoryResponse }
      * 
      */
@@ -330,6 +342,14 @@ public class ObjectFactory {
      */
     public IsLoggedIn createIsLoggedIn() {
         return new IsLoggedIn();
+    }
+
+    /**
+     * Create an instance of {@link RegisterDriverResponse }
+     * 
+     */
+    public RegisterDriverResponse createRegisterDriverResponse() {
+        return new RegisterDriverResponse();
     }
 
     /**
@@ -370,6 +390,14 @@ public class ObjectFactory {
      */
     public GetAllBranchesResponse createGetAllBranchesResponse() {
         return new GetAllBranchesResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetDriverbyId }
+     * 
+     */
+    public GetDriverbyId createGetDriverbyId() {
+        return new GetDriverbyId();
     }
 
     /**
@@ -522,6 +550,14 @@ public class ObjectFactory {
      */
     public GetAllBranches createGetAllBranches() {
         return new GetAllBranches();
+    }
+
+    /**
+     * Create an instance of {@link GetDriverbyIdResponse }
+     * 
+     */
+    public GetDriverbyIdResponse createGetDriverbyIdResponse() {
+        return new GetDriverbyIdResponse();
     }
 
     /**
@@ -778,12 +814,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link RegisterDriver }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "registerDriver")
+    public JAXBElement<RegisterDriver> createRegisterDriver(RegisterDriver value) {
+        return new JAXBElement<RegisterDriver>(_RegisterDriver_QNAME, RegisterDriver.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Customer }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "go_cheeta", name = "return")
     public JAXBElement<Customer> createReturn(Customer value) {
         return new JAXBElement<Customer>(_Return_QNAME, Customer.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link RegisterDriverResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "registerDriverResponse")
+    public JAXBElement<RegisterDriverResponse> createRegisterDriverResponse(RegisterDriverResponse value) {
+        return new JAXBElement<RegisterDriverResponse>(_RegisterDriverResponse_QNAME, RegisterDriverResponse.class, null, value);
     }
 
     /**
@@ -940,6 +994,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetDriverbyId }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "getDriverbyId")
+    public JAXBElement<GetDriverbyId> createGetDriverbyId(GetDriverbyId value) {
+        return new JAXBElement<GetDriverbyId>(_GetDriverbyId_QNAME, GetDriverbyId.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetDriverOrderHistory }{@code >}}
      * 
      */
@@ -1054,6 +1117,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "getAllBranches")
     public JAXBElement<GetAllBranches> createGetAllBranches(GetAllBranches value) {
         return new JAXBElement<GetAllBranches>(_GetAllBranches_QNAME, GetAllBranches.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetDriverbyIdResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gocheeta.jemeisha.com/", name = "getDriverbyIdResponse")
+    public JAXBElement<GetDriverbyIdResponse> createGetDriverbyIdResponse(GetDriverbyIdResponse value) {
+        return new JAXBElement<GetDriverbyIdResponse>(_GetDriverbyIdResponse_QNAME, GetDriverbyIdResponse.class, null, value);
     }
 
     /**

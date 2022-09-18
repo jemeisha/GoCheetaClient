@@ -9,10 +9,8 @@
 <div id="layoutSidenav" class="h-full w-60">
     <div id="layoutSidenav_nav">
         <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-
             <div class="sb-sidenav-menu">
                 <div class="nav">
-
                     <a class="nav-link" href="/admin">
                         <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                         Admin

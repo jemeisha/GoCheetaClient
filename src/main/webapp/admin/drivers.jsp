@@ -58,6 +58,7 @@
             %>
 <%--            <%=d.getDriverId()%>--%>
             <jsp:include page="/WEB-INF/partials/driverRow.jsp">
+                <jsp:param name="editable" value="true"/>
                 <jsp:param name="driverId" value="<%=d.getDriverId()%>"/>
                 <jsp:param name="driverFName" value="<%=d.getDriverFirstName()%>"/>
                 <jsp:param name="driverLName" value="<%=d.getDriverLastName()%>"/>

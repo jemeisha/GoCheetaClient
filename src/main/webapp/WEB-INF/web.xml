@@ -65,6 +65,15 @@
     <jsp-file>/driverPanel.jsp</jsp-file>
   </servlet>
 
+  <servlet>
+    <servlet-name>addDriver</servlet-name>
+    <servlet-class>com.jemeisha.endpoints.AddDriver</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>updateDriver</servlet-name>
+    <servlet-class>com.jemeisha.endpoints.UpdateDriver</servlet-class>
+  </servlet>
 
   <servlet>
     <servlet-name>driverLogin</servlet-name>
@@ -147,5 +156,15 @@
   <servlet-mapping>
     <servlet-name>changeTripStatus</servlet-name>
     <url-pattern>/driver/change-trip-status</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>addDriver</servlet-name>
+    <url-pattern>/admin/drivers/add-driver</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>updateDriver</servlet-name>
+    <url-pattern>/admin/drivers/update-driver</url-pattern>
   </servlet-mapping>
 </web-app>
