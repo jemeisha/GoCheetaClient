@@ -19,6 +19,7 @@ public class AddDriver extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         String fname = req.getParameter("fname");
         String lname = req.getParameter("lname");
         String nic = req.getParameter("nic");

@@ -37,6 +37,8 @@
                     <br>
 
                 </center>
+                <input type="hidden" value='<%=request.getAttribute("dId")%>' name="dId" />
+
                 <div class="form-row">
                     <div class="col">
                         <!-- First name -->
@@ -104,7 +106,7 @@
 
                 <div >
                     <input type="text" class="form-control" placeholder="Enter the Vehicle Number" value='<%=request.getAttribute("vno")%>'  name="vno" required/>
-
+                    <input type="hidden" value='<%=request.getAttribute("vno")%>' name="oldVno" />
                 </div>
                 <div class="flex flex-col mb-4">
                     <div class="text-[rgb(73,80,87)] text-left mb-1">Vehicle Category</div>

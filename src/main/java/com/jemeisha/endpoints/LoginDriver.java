@@ -40,13 +40,8 @@ public class LoginDriver extends HttpServlet {
             Cookie cookie = Util.createDriverCookie(token);
             resp.addCookie(cookie);
 
-            resp.setContentType("text/html");//setting the content type
-            PrintWriter pw=resp.getWriter();//get the stream to write the data
+            resp.sendRedirect("/driver-panel");
 
-//writing html in the stream
-            pw.println("<html><body>");
-            pw.println("Welcome to servlet");
-            pw.println("</body></html>");
 
         } catch (NoSuchAlgorithmException_Exception e) {
             throw new RuntimeException(e);

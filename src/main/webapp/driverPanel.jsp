@@ -25,11 +25,11 @@
     <%
         LogicService logicService = new LogicService();
         Logic logic = logicService.getLogicPort();
-//        Driver c = Util.getLoggedInDriver(request);
-        Driver c = logic.getLoggedInDriver("x");
-//        if (c == null) {
-//            response.sendRedirect("/login");
-//        }
+        Driver c = Util.getLoggedInDriver(request);
+//        Driver c = logic.getLoggedInDriver("x");
+        if (c == null) {
+            response.sendRedirect("/login");
+        }
         Order ongoingOrder = logic.getDriverOngoingBooking(c.getDriverId() + "");
         boolean isOngoingOrder = ongoingOrder != null;
 

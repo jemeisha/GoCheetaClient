@@ -1,6 +1,7 @@
 package com.jemeisha.endpoints;
 
 import com.jemeisha.proxy.Driver;
+import com.jemeisha.proxy.Exception_Exception;
 import com.jemeisha.proxy.Logic;
 import com.jemeisha.proxy.LogicService;
 
@@ -40,4 +41,29 @@ public class UpdateDriver extends HttpServlet {
         req.getRequestDispatcher("/admin/driverFormUpdate.jsp").forward(req,resp);
     }
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        LogicService service= new LogicService();
+        Logic logic = service.getLogicPort();
+
+        String driverId = req.getParameter("dId");
+        String fname = req.getParameter("fname");
+        String lname = req.getParameter("lname");
+        String nic = req.getParameter("nic");
+        String mobno = req.getParameter("mobno");
+        String pass = req.getParameter("pass");
+        String branchId = req.getParameter("branch");
+        String vno = req.getParameter("vno");
+        String oldVehicleNo = req.getParameter("oldVno");
+        String vCatId = req.getParameter("vCat");
+        String noseats = req.getParameter("noseats");
+        String colour = req.getParameter("colour");
+
+        try {
+            logic.updateDriver(oldVehicleNo,driverId,fname,lname,nic,mobno,pass,branchId,vno,vCatId,noseats,colour);
+            resp.sendRedirect("/admin/drivers");
+        } catch (Exception_Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

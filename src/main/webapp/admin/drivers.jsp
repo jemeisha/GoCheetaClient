@@ -47,6 +47,10 @@
                 <jsp:param name="value" value="5"/>
             </jsp:include>
         </div>
+        <div class="w-full flex flex-row">
+            <a href="/admin/drivers/add-driver" class=" w-60 ml-3 btn btn-outline-success btn-rounded btn-block waves-effect z-depth-0"
+               type="submit" name="btnLogin" >Add a new Driver</a>
+        </div>
         <div class="w-full flex flex-col">
             <%
                 LogicService logicService= new LogicService();

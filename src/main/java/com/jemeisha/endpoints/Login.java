@@ -38,13 +38,7 @@ public class Login extends HttpServlet {
             Cookie cookie = Util.createCustomerCookie(token);
             resp.addCookie(cookie);
 
-            resp.setContentType("text/html");//setting the content type
-            PrintWriter pw=resp.getWriter();//get the stream to write the data
-
-//writing html in the stream
-            pw.println("<html><body>");
-            pw.println("Welcome to servlet");
-            pw.println("</body></html>");
+            resp.sendRedirect("/customer-panel");
 
         } catch (NoSuchAlgorithmException_Exception e) {
             throw new RuntimeException(e);
