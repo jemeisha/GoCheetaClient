@@ -25,15 +25,10 @@ public class Register extends HttpServlet {
         Logic logic=logicService.getLogicPort();
         try {
             logic.register(username,password,fname,lname,mobile);
+            res.sendRedirect("/login");
         } catch (NoSuchAlgorithmException_Exception e) {
             throw new RuntimeException(e);
         }
-        res.setContentType("text/html");//setting the content type
-        PrintWriter pw=res.getWriter();//get the stream to write the data
 
-//writing html in the stream
-        pw.println("<html><body>");
-        pw.println("Welcome to servlet");
-        pw.println("</body></html>");
     }
 }

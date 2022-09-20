@@ -80,7 +80,7 @@
 
           <hr>
           <p>Still don't have an Account?
-            <a href="goSignUp.html">Sign up</a>
+            <a href="/">Sign up</a>
           </p>
 
           <!-- Terms of service -->

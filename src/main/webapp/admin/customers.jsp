@@ -32,19 +32,22 @@
     <%@ include file="/WEB-INF/partials/adminSidebar.jsp"%>
   </div>
   <div class="grow shrink-0 flex flex-col">
+    <%
+      LogicService logicService= new LogicService();
+      Logic logic= logicService.getLogicPort();
+
+      Customer customers[]= logic.getAllCustomers().toArray(new Customer[0]);
+    %>
     <div class="w-full flex flex-row flex-wrap">
       <jsp:include page="/WEB-INF/partials/infoCard.jsp">
         <jsp:param name="title" value="Total Customers"/>
-        <jsp:param name="value" value="5"/>
+        <jsp:param name="value" value="<%=customers.length%>"/>
       </jsp:include>
 
     </div>
     <div class="w-full flex flex-col">
       <%
-        LogicService logicService= new LogicService();
-        Logic logic= logicService.getLogicPort();
 
-        Customer customers[]= logic.getAllCustomers().toArray(new Customer[0]);
         for(int x=0;x< customers.length;x++){
           Customer d= customers[x];
       %>

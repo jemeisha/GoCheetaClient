@@ -27,6 +27,7 @@
         Customer c = Util.getLoggedInCustomer(request);
         if (c == null) {
             response.sendRedirect("/login");
+            return;
         }
         Order ongoingOrder = logic.getCustomerOngoingBooking(c.getUsername());
         boolean isOngoingOrder = ongoingOrder != null;

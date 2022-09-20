@@ -9,6 +9,7 @@
 <%@ page import="com.jemeisha.proxy.Driver" %>
 <%@ page import="com.jemeisha.proxy.LogicService" %>
 <%@ page import="com.jemeisha.proxy.Logic" %>
+<%@ page import="com.jemeisha.proxy.DriverInfomation" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     boolean isLoggedIn= Util.isAdminLoggedIn(request);
@@ -31,20 +32,27 @@
         <%@ include file="/WEB-INF/partials/adminSidebar.jsp"%>
     </div>
     <div class="grow shrink-0 flex flex-col">
+        <%
+            LogicService logicService= new LogicService();
+            Logic logic= logicService.getLogicPort();
+
+            DriverInfomation driverInfomation= logic.getDriverInfomation();
+        %>
         <div class="w-full flex flex-row flex-wrap">
+
             <jsp:include page="/WEB-INF/partials/infoCard.jsp">
                 <jsp:param name="title" value="Total Drivers"/>
-                <jsp:param name="value" value="5"/>
+                <jsp:param name="value" value="<%=driverInfomation.getTotalDrivers()%>"/>
             </jsp:include>
 
             <jsp:include page="/WEB-INF/partials/infoCard.jsp">
                 <jsp:param name="title" value="Total Vehicles"/>
-                <jsp:param name="value" value="5"/>
+                <jsp:param name="value" value="<%=driverInfomation.getTotalVehicles()%>"/>
             </jsp:include>
 
             <jsp:include page="/WEB-INF/partials/infoCard.jsp">
                 <jsp:param name="title" value="Available Drivers"/>
-                <jsp:param name="value" value="5"/>
+                <jsp:param name="value" value="<%=driverInfomation.getAvailableDrivers()%>"/>
             </jsp:include>
         </div>
         <div class="w-full flex flex-row">
@@ -53,8 +61,7 @@
         </div>
         <div class="w-full flex flex-col">
             <%
-                LogicService logicService= new LogicService();
-                Logic logic= logicService.getLogicPort();
+
 
                 Driver drivers[]= logic.getAllDriversWithVehicles().toArray(new Driver[0]);
                 for(int x=0;x< drivers.length;x++){
